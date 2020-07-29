@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="container header">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand title" href="/">自由论坛</a>
+      <div><img src="/public//img/logo3.png" title="好看吗？"></div>
+      <div><img src="/public//img/logo3.png" title="好看吗？"></div>
+      <div><img src="/public//img/logo3.png" title="好看吗？"></div>
+      {{if user}}
+      <div class="userImg">
+        <div class="card userCard" style="width: 14rem">
+          <div class="card-header">
+            用户信息
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">当前用户：{{user.name}}</li>
+            <li class="list-group-item">邮箱：{{user.email}}</li>
+            <li class="list-group-item">
+              <a href="/admin" class="badge badge-success">个人主页</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+        {{else}}
+        <div class="userInfo">
+          <a href="/login" class="btn btn-primary btn-lg " tabindex="-1" role="button" aria-disabled="true">Login
+          </a>
+        <a href="/register" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">Register</a>
+        </div> 
+        {{/if}}
+  </nav>
+  </div>
+</div>

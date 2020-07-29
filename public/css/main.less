@@ -1,0 +1,56 @@
+.dropdown-current-user {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:hover,
+.navbar-default .navbar-nav>.open>a:focus {
+    background: none;
+}
+
+.navbar-light .title {
+    font-size: 30px;
+    font-weight: 700;
+    color: cornflowerblue;
+}
+
+.wrapper {
+    background-color: #7952b3;
+
+    a.title {
+        color: #ffffff;
+        &:hover{
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    }
+}
+
+.userInfo {
+    position: absolute;
+    right: 20px;
+}
+
+.userImg {
+    position: absolute;
+    right: 250px;
+    width: 50px;
+    height: 50px;
+    padding-bottom: 5px;
+    background-image: url('/public/img/avatar-default.png');
+    background-position: -30px 0px;
+    cursor: pointer;
+    .userCard{
+        position: absolute;
+        top: 50px;
+        visibility: hidden;
+        background-color: transparent!important;
+        border: none;
+    }
+    &:hover .userCard {
+        visibility: visible;
+    }
+}

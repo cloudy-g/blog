@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登录页面</title>
+  <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/public/css/login.css">
+</head>
+<body>
+  <div class="jumbotron">
+    <h1 class="display-4">Hello !</h1>
+    <div class="poster">
+      <img src="/public/img/register.jpg" alt="">
+    </div>
+    <p class="lead">网站欢迎你再次到来<hr class="my-4">
+      <p>请输入用户信息</p>
+    <form class="dataForm" method="POST">
+      <div class="form-group">
+        <label for="exampleInputEmail1">User name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">请放心您的账户安全</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+      </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" checked>
+        <label class="form-check-label" for="exampleCheck1">同意安全许可证</label>
+      </div>
+      <button type="submit" class="btn btn-primary">登录</button>
+      <a href="/register" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">注册
+      </a>
+      &nbsp;
+      <a href="/" class="btn btn-primary " tabindex="-1" role="button" aria-disabled="true">返回首页
+      </a>
+    </form>
+  </div>
+</body>
+</html>
