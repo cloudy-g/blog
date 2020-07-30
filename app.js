@@ -19,8 +19,17 @@ app.use(session({
 //   cookie: { secure: true }
 }))
 
-app.use(router);
-
-app.listen(3000, () => {
-    console.log('http://localhost:3000');
-})
+app
+    .use(router)
+    .use((req, res) => {
+        res.render('404.html');
+    })
+    .use((err, req, res, next) => {
+            res.json({
+                message: err.message,
+                err_code : 500
+            }).status(500);
+    })
+    .listen(3000, () => {
+        console.log('http://localhost:3000');
+    })

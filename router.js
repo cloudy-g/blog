@@ -9,19 +9,21 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 router
     .get('/', (req,res) => {
-        // console.log();
         res.render('index.html', {
             user : req.session.data
         })
     })
+    .get('/logout', (req, res) => {
+        req.session.data = null;
+        res.redirect('/');
+    })
     .get('/register', (req, res) => {
         res.render('register.html');
     })
-    .post('/register', urlencodedParser ,(req, res) => {
+    .post('/register', urlencodedParser ,(req, res, next) => {
         handle.register(req, (err, data) => {
             if (err) {
-                res.json(err).status(500);
-                return;
+               return next(err);
             }
             res.json(data).status(200);
         })
@@ -29,6 +31,15 @@ router
     .get('/login', (req, res) => {
         res.render('login.html');
     }) 
+    .post('/login', urlencodedParser, (req, res, next) => {
+        handle.login(req, (err, data) => {
+            if (err) {
+                return next(err);
+            }
+            res.json(data).status(200);
+        })
+    })
+    
 
 
 module.exports = router;
